@@ -7,7 +7,7 @@ cache:
 rvm:
   - 2.7.1
 addons:
-  postgresql: '10'
+  postgresql: '9.6'
   chrome: 'stable'
   artifacts:
     paths:
