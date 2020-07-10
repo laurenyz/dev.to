@@ -7,7 +7,7 @@ cache:
 rvm:
   - 2.7.1
 addons:
-  postgresql: '9.6'
+  postgresql: '10'
   chrome: 'stable'
   artifacts:
     paths:
@@ -60,6 +60,7 @@ script:
   - bundle install --local --jobs=2
   - yarn install --frozen-lockfile
   - bundle exec rails db:create
+  - if [ "$KNAPSACK_PRO_CI_NODE_INDEX" == "2" ]; then bundle exec rails db:migrate; fi
   - bundle exec rails webpacker:compile
   - bundle exec rails db:schema:load
   - './cc-test-reporter before-build'
