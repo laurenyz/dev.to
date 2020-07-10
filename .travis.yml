@@ -7,7 +7,11 @@ cache:
 rvm:
   - 2.7.1
 addons:
-  postgresql: '9.6'
+  postgresql: '11'
+    apt:
+      packages:
+        - postgresql-11
+        - postgresql-client-11
   chrome: 'stable'
   artifacts:
     paths:
